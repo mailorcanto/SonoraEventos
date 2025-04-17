@@ -1,0 +1,33 @@
+# Arquivo gerado automaticamente pelo NetBeans, não precisa ir pro repositório
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Build do Maven/Gradle
+/target/
+/build/
+
+# Arquivos de configuração do Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# STS
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+
+# Arquivos temporários ou de backup
+*.log
+*.tmp
+*.bak
