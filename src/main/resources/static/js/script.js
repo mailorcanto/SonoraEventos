@@ -5,10 +5,22 @@ $(document).ready(function () {
     $form.on('submit', function (e) {
         e.preventDefault();
 
+        $('#mensagem')
+          .removeClass('alert-danger alert-success')
+          .addClass('d-none')
+          .text('');
+
         const servicosMarcados = $("input[name='servicos']:checked")
             .map(function () { return this.value; })
-            .get()
-            .join(", "); // juntar serviços com vírgula e espaço
+            .get();
+
+        if (servicosMarcados.length === 0) {
+            $('#mensagem')
+              .removeClass('d-none')
+              .addClass('alert alert-danger')
+              .text('Por favor, selecione pelo menos um serviço desejado.');
+            return;
+        }
 
         const novoOrc = {
             nomeCliente: $('#nome').val(),
@@ -18,7 +30,7 @@ $(document).ready(function () {
             tipoEvento: $('#tipoEvento').val(),
             numeroConvidados: parseInt($('#convidados').val(), 10),
             observacoes: $('#observacoes').val(),
-            servicosDesejados: servicosMarcados
+            servicosDesejados: servicosMarcados.join(", ")
         };
 
         $.ajax({
@@ -42,6 +54,8 @@ $(document).ready(function () {
         });
     });
 });
+
+
 
 
 
