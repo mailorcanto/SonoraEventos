@@ -1,26 +1,24 @@
 package com.sonoraeventos.sonora.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
-import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
-@RestController
+@Controller
 public class PaginaController {
 
     @GetMapping("/orcamentos")
-    public void orcamentos(HttpServletResponse response) throws IOException {
-        response.sendRedirect("/html/orcamentos.html");
+    public String orcamentos() {
+        return "orcamentos.html";
     }
 
     @GetMapping("/servicos")
-    public void servicos(HttpServletResponse response) throws IOException {
-        response.sendRedirect("/html/servicos.html");
+    public String servicos() {
+        return "servicos.html";
     }
 
     @GetMapping("/")
-    public void home(HttpServletResponse response) throws IOException {
-        response.sendRedirect("/html/index.html");
+    public String home() {
+        return "index.html";
     }
 }
+

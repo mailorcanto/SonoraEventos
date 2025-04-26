@@ -1,0 +1,35 @@
+.logo {
+    max-width: 150px;
+    height: auto;  
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.servico-img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.servico {
+    margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+    .servico {
+        margin-bottom: 50px;
+    }
+}
